@@ -1,0 +1,60 @@
+.menu-pagamentos .seta {
+  background-image: url('../image/SetaE.png');
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.article-pagamentos-referencia .menu .seta {
+  background-image: url('../image/SetaE.png');
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.menu-pagamentos .section-buttons {
+    flex-wrap: wrap;
+}
+main .section-cartoes .place-points {
+    position: relative;
+}
+main .section-cartoes .place-points::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #6f6f7a;
+}
+main .section-buttons .btn img:not(:nth-child(4)){
+  top: 4px;
+  background: red;
+}
+.article-pagamentos {
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+}
+.show {
+    opacity: 1;
+    transition: .5s;
+}
+.menu-pagamentos {
+    width: 100%;
+    height: 50px;
+    background: var(--orange);
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 0px 20px;
+    overflow: hidden;
+}
+.menu-pagamentos img {
+    width: 150px;
+  }

@@ -1,0 +1,439 @@
+:root {
+  --azul-principal: #0056a3;
+  --azul-medio: #1e78d2;
+  --azul-claro: #4a9ce8;
+  --amarelo-destaque: #ffc107;
+  --amarelo-claro: #ffe082;
+  --branco: #fff;
+  --cinza-claro: #f5f5f5;
+  --cinza-medio: #e0e0e0;
+  --cinza-escuro: #424242;
+  --preto: #212121;
+  --transicao: all 0.3s ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--preto);
+  line-height: 1.6;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+.curso-topo {
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-medio);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.topo-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+.logo-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--azul-principal);
+}
+.logo-topo img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--azul-principal);
+}
+.logo-topo span {
+  font-size: 0.85rem;
+  color: var(--cinza-escuro);
+}
+.logo-topo strong {
+  display: block;
+  font-size: 1.05rem;
+}
+.topo-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.topo-links a {
+  font-weight: 600;
+  color: var(--azul-principal);
+}
+.link-acao {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--azul-principal);
+  color: var(--branco);
+  transition: var(--transicao);
+}
+.link-acao:hover {
+  background: var(--azul-medio);
+  transform: translateY(-2px);
+}
+.hero-curso {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  color: var(--branco);
+  --cor-curso: var(--azul-principal);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.hero-conteudo {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0;
+}
+.hero-card {
+  background: #ffffff1a;
+  border: 1px solid #ffffff33;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 700px;
+}
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--amarelo-destaque);
+  color: var(--preto);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.hero-card h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+.hero-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.hero-detalhes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1.6rem;
+  margin-bottom: 2rem;
+}
+.hero-detalhes div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+.hero-detalhes i {
+  color: var(--amarelo-claro);
+}
+.hero-acoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.botao {
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: var(--transicao);
+}
+.botao.primario {
+  background: var(--amarelo-destaque);
+  color: var(--preto);
+}
+.botao.primario:hover {
+  background: var(--amarelo-claro);
+  transform: translateY(-2px);
+}
+.botao.outline {
+  border: 1px solid #ffffff;
+  color: var(--branco);
+  background: transparent;
+}
+.botao.outline:hover {
+  background: #ffffff1a;
+  transform: translateY(-2px);
+}
+.secao {
+  padding: 4rem 0;
+}
+.secao h2 {
+  color: var(--azul-principal);
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+}
+.grade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.grade-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px #0000000d;
+}
+.grade-card h3 {
+  color: var(--azul-medio);
+  margin-bottom: 0.8rem;
+}
+.grade-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--cinza-escuro);
+}
+.docentes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.docente-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 1.6rem;
+  text-align: center;
+  box-shadow: 0 12px 28px #0000000d;
+}
+.docente-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--azul-claro);
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.6rem;
+}
+.docente-formacao {
+  color: var(--cinza-escuro);
+  font-size: 0.9rem;
+  margin: 0.4rem 0;
+}
+.docente-disciplinas {
+  font-size: 0.9rem;
+  color: var(--azul-medio);
+}
+.calendario-lista {
+  display: grid;
+  gap: 1rem;
+}
+.calendario-item {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px #0000000d;
+}
+.calendario-data {
+  font-weight: 700;
+  color: var(--azul-principal);
+}
+.investimento-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 12px 26px #0000000d;
+}
+.investimento-card h3 {
+  font-size: 1.6rem;
+  color: var(--azul-principal);
+}
+.investimento-card p {
+  color: var(--cinza-escuro);
+  margin-top: 0.5rem;
+}
+.mercado-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1.2rem;
+}
+.mercado-lista li {
+  background: var(--branco);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px #0000000d;
+}
+.mercado-lista i {
+  color: var(--azul-principal);
+}
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.depoimento-card {
+  background: var(--branco);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px #0000000d;
+}
+.depoimento-card span {
+  display: block;
+  margin-top: 1rem;
+  color: var(--azul-medio);
+  font-weight: 600;
+}
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.galeria-grid img {
+  border-radius: 12px;
+  height: 180px;
+  object-fit: cover;
+}
+.contacto-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 12px 26px #0000000d;
+}
+.contacto-detalhes {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.contacto-detalhes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cinza-escuro);
+}
+.contacto-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.curso-nao-encontrado {
+  padding: 6rem 0;
+}
+.curso-nao-encontrado h1 {
+  font-size: 2.2rem;
+  color: var(--azul-principal);
+  margin-bottom: 1rem;
+}
+.lista-cursos {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.curso-link {
+  background: var(--branco);
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  box-shadow: 0 8px 20px #0000000d;
+}
+.curso-link i {
+  color: var(--azul-principal);
+}
+@media (max-width: 992px) {
+  .hero-card {
+    padding: 2rem;
+  }
+  .hero-detalhes {
+    grid-template-columns: 1fr;
+  }
+  .docentes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grade-grid {
+    grid-template-columns: 1fr;
+  }
+  .galeria-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .topo-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-card h1 {
+    font-size: 2.1rem;
+  }
+  .calendario-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .investimento-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mercado-lista {
+    grid-template-columns: 1fr;
+  }
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
+  .contacto-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 1.5rem;
+  }
+  .topo-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}

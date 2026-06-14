@@ -1,0 +1,205 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--beige);
+}
+header.cartoes-menu {
+  width: 100%;
+  height: 50px;
+  background: var(--orange);
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px 0px 20px;
+  overflow: hidden;
+}
+.cartoes-menu .menu-mobile {
+  background-image: url('../image/menuMobile.png');
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.cartoes-menu img {
+  width: 150px;
+}
+main .titulo {
+  text-align: center;
+  color: var(--orange);
+  margin: 8px 0px 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+main .section-cartoes {
+  width: 320px;
+  margin: 0 auto;
+}
+main .section-cartoes .container-img {
+  border-radius: 10px;
+  height: 150px;
+  width: 250px;
+  margin: 0 auto;
+}
+.container-img img {
+  width: 100%;
+  height: 100%;
+}
+main .section-cartoes .place-points {
+  width: 100%;
+  margin-top: 10px;
+}
+main .section-cartoes .place-points .title {
+  text-align: center;
+  font-weight: normal;
+  color: #b7b7c7;
+}
+
+main .section-buttons {
+  width: 67.5%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 30px auto 0;
+  gap: 30px;
+}
+main .section-buttons .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #777;
+  background: #fff;
+  border-radius: 10px;
+  transition: .2s;
+  cursor: pointer;
+}
+main .section-buttons .btn:hover {
+  transform: scale(1.1);
+  border-color: var(--orange);
+}
+.btn {
+  width: 80px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+}
+.btn img {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 10px;
+}
+main .section-buttons .btn .Texpress{
+  top: 5px;
+}
+main .section-buttons .btn .LsemCartao {
+  top: 4px;
+}
+main .section-buttons .btn .pagamentos {
+  width: 60%;
+}
+main .section-buttons .btn .transferencias {
+  width: 70%;
+  top: 12px;
+}
+main .section-buttons .btn .compras {
+  width: 70%;
+  top: 6px;
+}
+main .section-buttons .btn .consulta {
+  width: 64%;
+  top: 6px;
+}
+main .section-buttons .btn .pAutorizar {
+  width: 64%;
+  top: 1px;
+}
+.btn span {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  font-size: 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.cartoes {
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+}
+.nav-menu-mobile {
+  position: absolute;
+  transform: translateX(-100%);
+  width: 65%;
+  height: 100%;
+  background: #fff;
+  z-index: 12;
+  padding: 20px 0px 0px 20px;
+  transition: .1s;
+}
+.ul-menu-mobile {
+  list-style: none;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+.ul-menu-mobile li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--orange);
+  left: 30px;
+}
+a:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -2px;
+  width: 100px;
+  height: 20px;
+  background-image: url('../image/cartoes/linksMenu.jpg');
+  background-repeat: no-repeat;
+  background-size: 15%;
+}
+.link-1:before {
+  background-position-y: 2px;
+}
+.link-2:before {
+  background-position-y: -25px;
+}
+.link-3:before {
+  background-position-y: -50px;
+}
+.link-4:before {
+  background-position-y: -77px;
+}
+.link-5:before {
+  background-position-y: -103px;
+}
+.link-6:before {
+  background-position-y: -130px;
+}
+.link-7:before {
+  background-position-y: -155px;
+}
+.link-8:before {
+  background-position-y: -181px;
+}
+.activo {
+  transition: .2s;
+  transform: translateX(0);
+}

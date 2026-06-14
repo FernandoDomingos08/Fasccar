@@ -1,0 +1,42 @@
+.pagina-recrutamento {
+  min-height: 100vh;
+  padding: 1.2rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, var(--azul-principal), var(--azul-claro));
+}
+
+.recrutamento-cartao {
+  width: min(980px, 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+.recrutamento-cartao > header h1 {
+  margin-bottom: 0.35rem;
+}
+
+.form-recrutamento {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.coluna-inteira {
+  grid-column: 1 / -1;
+}
+
+.acoes-formulario {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.info-recrutamento ol {
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  .coluna-inteira {
+    grid-column: auto;
+  }
+}

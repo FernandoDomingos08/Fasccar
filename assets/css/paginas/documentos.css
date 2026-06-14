@@ -1,0 +1,34 @@
+﻿.form-documento {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.resumo-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.8rem;
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--azul-claro) 8%, var(--branco));
+}
+
+.resumo-preview p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+#tabela-notas-preview tbody tr:hover {
+  background: color-mix(in srgb, var(--amarelo-claro) 40%, transparent);
+}
+
+#historico .badge {
+  min-width: 92px;
+}
+
+@media (max-width: 760px) {
+  .resumo-preview {
+    grid-template-columns: 1fr;
+  }
+}

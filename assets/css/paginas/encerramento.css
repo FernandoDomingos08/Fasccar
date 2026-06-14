@@ -1,0 +1,289 @@
+:root {
+  --bg-1: #050b1c;
+  --bg-2: #0b1c3d;
+  --bg-3: #0f2a57;
+  --accent: #7abcf2;
+  --accent-2: #f2d27a;
+  --text: #f5f7ff;
+  --muted: rgba(245, 247, 255, 0.72);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.encerramento {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--text);
+  background: radial-gradient(circle at top, rgba(35, 79, 150, 0.4), transparent 45%),
+    linear-gradient(135deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+  font-family: 'Manrope', sans-serif;
+}
+
+canvas#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.light-sweep {
+  position: fixed;
+  inset: -20%;
+  z-index: 1;
+  background: linear-gradient(120deg, transparent, rgba(122, 188, 242, 0.12), transparent);
+  animation: sweep 12s linear infinite;
+  pointer-events: none;
+}
+
+.presentation {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  display: block;
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 4;
+}
+
+#progress-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 18px rgba(122, 188, 242, 0.5);
+  transition: width 0.2s ease;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(24px, 8vw, 120px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px) scale(0.98);
+  transition: opacity 1s ease, transform 1s ease, visibility 0s linear 1s;
+}
+
+.scene.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scene h1,
+.scene h2 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.scene h1 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+.scene h2 {
+  font-size: clamp(1.4rem, 3vw, 2.6rem);
+}
+
+.divider {
+  width: clamp(140px, 30vw, 320px);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+}
+
+.scene-logo .logo,
+.scene-end .logo {
+  width: clamp(90px, 12vw, 160px);
+  height: auto;
+  filter: drop-shadow(0 0 25px rgba(122, 188, 242, 0.5));
+  animation: logoIn 2.2s ease forwards;
+  opacity: 0;
+}
+
+.scene-logo .logo-sub,
+.scene-end .logo-sub {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: fadeUp 1.8s ease forwards;
+  animation-delay: 1.4s;
+  opacity: 0;
+}
+
+.scene-logo .spotlight {
+  position: absolute;
+  width: clamp(220px, 40vw, 520px);
+  height: clamp(220px, 40vw, 520px);
+  background: radial-gradient(circle, rgba(122, 188, 242, 0.4), transparent 70%);
+  filter: blur(6px);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: -1;
+}
+
+.scene-theme {
+  gap: 1.6rem;
+}
+
+.typed {
+  max-width: 980px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  min-height: 6rem;
+}
+
+.members,
+.group-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+}
+
+.members li,
+.group-meta p,
+.dedicatory-text p,
+.thanks-text p,
+.final-messages p,
+.final-group {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.scene.active .members li,
+.scene.active .group-meta p,
+.scene.active .dedicatory-text p,
+.scene.active .thanks-text p,
+.scene.active .final-messages p,
+.scene.active .final-group {
+  animation: fadeUp 1s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.scene-group {
+  gap: 1.4rem;
+}
+
+.dedicatory-text,
+.thanks-text,
+.final-messages {
+  max-width: 980px;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  line-height: 1.7;
+  display: grid;
+  gap: 1rem;
+}
+
+.scene-final {
+  gap: 2rem;
+}
+
+.final-group {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 3vw, 2.6rem);
+  letter-spacing: 0.2em;
+  color: var(--accent-2);
+}
+
+.audio-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 0.6rem 1rem;
+  background: rgba(5, 11, 28, 0.8);
+  border: 1px solid rgba(122, 188, 242, 0.4);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.85rem;
+  z-index: 5;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-40%) rotate(8deg);
+  }
+  100% {
+    transform: translateX(40%) rotate(8deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .scene {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .typed,
+  .dedicatory-text,
+  .thanks-text,
+  .final-messages {
+    font-size: 0.95rem;
+  }
+
+  .members,
+  .group-meta {
+    font-size: 0.95rem;
+  }
+}

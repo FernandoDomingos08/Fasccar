@@ -1,0 +1,259 @@
+﻿/* VARIÁVEIS E RESET */
+:root {
+  --azul-principal: #0056a3;
+  --azul-medio: #1e78d2;
+  --azul-claro: #4a9ce8;
+  --amarelo-destaque: #ffc107;
+  --amarelo-claro: #ffe082;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+  --cinza-medio: #e0e0e0;
+  --cinza-escuro: #424242;
+  --preto: #212121;
+  --transicao: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--preto);
+  transition: var(--transicao);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background: var(--azul-principal);
+  color: var(--branco);
+  padding: 0.72rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.botao:hover {
+  background: var(--azul-medio);
+  transform: translateY(-1px);
+}
+
+.botao.secundario {
+  background: var(--amarelo-destaque);
+  color: var(--preto);
+}
+
+.botao.secundario:hover {
+  background: #ffcf40;
+}
+
+.cabecalho-pagina {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cinza-medio);
+  background: var(--branco);
+}
+
+.cartao {
+  background: var(--branco);
+  border: 1px solid var(--cinza-medio);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.grade {
+  display: grid;
+  gap: 1rem;
+}
+
+.grade.col-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grade.col-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.indicador {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--azul-principal);
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--cinza-escuro);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  font: inherit;
+  background: var(--branco);
+  color: var(--preto);
+  min-height: 44px;
+}
+
+button,
+.botao {
+  min-height: 44px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid color-mix(in srgb, var(--azul-claro) 45%, white);
+  border-color: var(--azul-claro);
+}
+
+.tabela-responsiva {
+  overflow-x: auto;
+}
+
+.tabela-responsiva table {
+  min-width: 720px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.72rem;
+  border-bottom: 1px solid var(--cinza-medio);
+  white-space: nowrap;
+}
+
+th {
+  color: var(--cinza-escuro);
+  background: color-mix(in srgb, var(--cinza-claro) 74%, white);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  background: var(--cinza-medio);
+  color: var(--cinza-escuro);
+}
+
+.badge.sucesso {
+  background: #d8f7e8;
+  color: #146a44;
+}
+
+.badge.alerta {
+  background: #fff1ca;
+  color: #7d5900;
+}
+
+.badge.erro {
+  background: #ffe0dc;
+  color: #982b2b;
+}
+
+.alerta {
+  border: 1px solid var(--cinza-medio);
+  border-left: 4px solid var(--azul-principal);
+  border-radius: 10px;
+  background: var(--branco);
+  padding: 0.8rem 0.9rem;
+}
+
+.alerta.erro {
+  border-left-color: #d32f2f;
+}
+
+.alerta.sucesso {
+  border-left-color: #2e7d32;
+}
+
+.texto-pequeno {
+  font-size: 0.92rem;
+  color: var(--cinza-escuro);
+}
+
+.rodape {
+  margin-top: 2rem;
+  border-top: 1px solid var(--cinza-medio);
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--cinza-escuro);
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: min(1100px, 94%);
+  }
+}
+
+@media (max-width: 992px) {
+  .grade.col-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grade.col-2,
+  .grade.col-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .botao {
+    width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 95%;
+  }
+
+  .cartao {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+}
